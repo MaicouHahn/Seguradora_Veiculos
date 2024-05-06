@@ -28,4 +28,10 @@ public class ClienteController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{cod_cliente}").buildAndExpand(cli.getCod_cliente()).toUri();
         return ResponseEntity.created(uri).body(cli);
     }
+    @PutMapping
+    public ResponseEntity<Cliente>update(@RequestParam Long id,@RequestBody Cliente cli){
+        Cliente obj = clienteService.update(id,cli);
+        return ResponseEntity.ok().body(obj);
+    }
+    
 }
