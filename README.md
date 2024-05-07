@@ -15,7 +15,18 @@ GET /clientes
         "telefone_celular": String
     }
 ]
-
+```
+GET /clientes/{id} 
+```json
+    {
+        "cod_cliente": int,
+        "nome": String,
+        "cpf": String,
+        "sexo": String,
+        "endereco": String,
+        "telefone_fixo": String,
+        "telefone_celular": String
+    }
 ```
 ## Inserir cliente no banco
 POST /clientes
@@ -30,8 +41,7 @@ POST /clientes
     }
 ```
 ## Atualizar cliente no banco
-PUT /clientes
-Passar o id no link da requisição: localhost:8080/clientes?id=2
+PUT /clientes/{id}
 ```json
 
     {
@@ -43,3 +53,6 @@ Passar o id no link da requisição: localhost:8080/clientes?id=2
         "telefone_celular": String
     }
 ```
+
+## Deletar Cliente do banco
+DELETE /clientes/{id}
