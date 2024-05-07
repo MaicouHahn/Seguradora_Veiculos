@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClienteService {
@@ -26,6 +27,13 @@ public class ClienteService {
         updateCliente(clienteDTO,cli);
         return clienteRepository.save(clienteDTO);
     }
+    public Cliente findById(Long id){
+        Optional<Cliente>obj = clienteRepository.findById(id);
+        return obj.orElseThrow(()->new RuntimeException());
+    }
+    public void delete(Long id){
+        clienteRepository.deleteById(id);
+    }
 
     private void updateCliente(Cliente clienteDTO,Cliente cliente){
         clienteDTO.setNome(cliente.getNome());
@@ -35,4 +43,6 @@ public class ClienteService {
         clienteDTO.setTelefone_fixo(cliente.getTelefone_fixo());
         clienteDTO.setTelefone_celular(cliente.getTelefone_celular());
     }
+
+
 }
