@@ -17,6 +17,9 @@ public class Carro {
     private Integer ano;
     private String cor;
 
+    public Carro(){
+
+    }
     public Carro(Long id, String placa, String modelo, String chassi, String marca, Integer ano, String cor) {
         this.id = id;
         this.placa = placa;
