@@ -56,3 +56,63 @@ PUT /clientes/{id}
 
 ## Deletar Cliente do banco
 DELETE /clientes/{id}
+
+# Camada dos Carros
+
+## Obter cadastros dos carros adicionados no banco
+GET /carros
+```json
+[
+    {
+        "id": Integer,
+        "placa": String,
+        "modelo": String,
+        "chassi": String,
+        "marca": String,
+        "ano": Integer,
+        "cor": String
+    }
+]
+```
+
+## Obter cadastros dos carros adicionados no banco por ID
+GET /carros/{id}
+```json
+    {
+        "id": Integer,
+        "placa": String,
+        "modelo": String,
+        "chassi": String,
+        "marca": String,
+        "ano": Integer,
+        "cor": String
+    }
+```
+## Adicionar o cadastro de um carro no banco
+POST /carros
+```json
+    {
+        "placa": String, //requerido
+        "modelo": String,
+        "chassi": String, //requerido
+        "marca": String,
+        "ano": Integer,
+        "cor": String
+    }
+```
+
+## Modificar o cadastro de um carro no banco
+PUT /carros
+```json
+    {
+        "placa": String, //requerido
+        "modelo": String,
+        "chassi": String, //requerido
+        "marca": String,
+        "ano": Integer,
+        "cor": String
+    }
+```
+
+## Deletar um cadastro de carro por ID 
+DELETE /carros/{id}
